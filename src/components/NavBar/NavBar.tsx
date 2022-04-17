@@ -31,7 +31,6 @@ const NavBar = () => {
           alignItems: "center",
           textAlign: "center",
           borderBottom: "1px solid #EBEBED",
-          marginBottom: "5px",
         }}
       >
         <Link to="/">
@@ -97,6 +96,11 @@ const NavBar = () => {
         </MenuItem>
         <MenuItem>
           <Avatar /> My account
+        </MenuItem>
+        <MenuItem>
+          <Link to="/dashboard">
+            <Avatar /> Dashboard
+          </Link>
         </MenuItem>
         <Divider />
         <MenuItem>

@@ -1,63 +1,86 @@
-import React from 'react'
+import React from "react";
 
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import SendIcon from "@mui/icons-material/Send";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import StarBorder from "@mui/icons-material/StarBorder";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-const Menu = () => {
+import { Box } from "@mui/material";
+import MenuItem from "./MenuItem";
 
-  const [open, setOpen] = React.useState(true);
+const Menu = (props: any) => {
+  const { open, onClose } = props;
+  
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  const items = [
+    {
+      href: "/",
+      icon: <OpenInNewIcon fontSize="small" />,
+      title: "Dashboard",
+    },
+    {
+      href: "/customers",
+      icon: <StarBorder fontSize="small" />,
+      title: "Customers",
+    },
+    {
+      href: "/products",
+      icon: <ExpandLess fontSize="small" />,
+      title: "Products",
+    },
+    {
+      href: "/account",
+      icon: <SendIcon fontSize="small" />,
+      title: "Account",
+    },
+    {
+      href: "/settings",
+      icon: <DraftsIcon fontSize="small" />,
+      title: "Settings",
+    },
+    {
+      href: "/login",
+      icon: <InboxIcon fontSize="small" />,
+      title: "Login",
+    },
+    {
+      href: "/register",
+      icon: <ExpandMore fontSize="small" />,
+      title: "Register",
+    },
+    {
+      href: "/404",
+      icon: <ExpandMore fontSize="small" />,
+      title: "Error",
+    },
+  ];
 
   return (
-    <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        backgroundColor: '#111827'
+      }}
     >
-      <ListItemButton>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItemButton>
-      <ListItemButton onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
-        </List>
-      </Collapse>
-    </List>
+      <Box sx={{ flexGrow: 1 }}>
+        {items.map((item) => (
+          <>
+            <MenuItem
+              key={item.title}
+              icon={item.icon}
+              href={item.href}
+              title={item.title}
+            />
+          </>
+        ))}
+      </Box>
+    </Box>
   );
-}
+};
 
-export default Menu
+export default Menu;
