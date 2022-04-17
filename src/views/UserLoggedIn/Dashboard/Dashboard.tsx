@@ -1,46 +1,114 @@
 import React, {useState} from "react";
-import Menu from "./components/Menu";
-import { Box } from '@mui/material';
+import Sidebar from "./components/Sidebar";
+import { Box, Container, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import DashboardLayout from './components/DashboardLayout';
 // import { DashboardNavbar } from './dashboard-navbar';
 
-const Dashboard = (props: any) => {
-
-  const { children } = props;
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-
-  const DashboardLayoutRoot = styled('div')(({ theme }) => ({
-    display: 'flex',
-    flex: '1 1 auto',
-    maxWidth: '100%',
-    paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 280
-    }
-  }));
-
-  return (
-    <>
-      <DashboardLayoutRoot>
-        <Box
-          sx={{
-            display: 'flex',
-            flex: '1 1 auto',
-            flexDirection: 'column',
-            width: '100%',
-            bgColor: '#333'
-          }}
+const Dashboard = () => (
+  <>
+    <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        py: 8
+      }}
+    >
+      <Container maxWidth={false}>
+        <Grid
+          container
+          spacing={3}
         >
-          {children}
-        </Box>
-      </DashboardLayoutRoot>
-      {/* <DashboardNavbar onSidebarOpen={() => setSidebarOpen(true)} /> */}
-      <Menu
-        onClose={() => setSidebarOpen(false)}
-        open={isSidebarOpen}
-      />
-    </>
-  );
-};
+          <Grid
+            item
+            lg={3}
+            sm={6}
+            xl={3}
+            xs={12}
+          >
+            {/* <Budget />  */}
+            <h1>Budget</h1>
+          </Grid>
+          <Grid
+            item
+            xl={3}
+            lg={3}
+            sm={6}
+            xs={12}
+          >
+            {/* <TotalCustomers /> */}
+            <h1>TotalCustomers</h1>
+          </Grid>
+          <Grid
+            item
+            xl={3}
+            lg={3}
+            sm={6}
+            xs={12}
+          >
+            {/* <TasksProgress /> */}
+            <h1>TasksProgress</h1>
+          </Grid>
+          <Grid
+            item
+            xl={3}
+            lg={3}
+            sm={6}
+            xs={12}
+          >
+            {/* <TotalProfit sx={{ height: '100%' }} /> */}
+            <h1>TotalProfit</h1>
+          </Grid>
+          <Grid
+            item
+            lg={8}
+            md={12}
+            xl={9}
+            xs={12}
+          >
+            {/* <Sales /> */}
+            <h1>Sales</h1>
+          </Grid>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            xl={3}
+            xs={12}
+          >
+            {/* <TrafficByDevice sx={{ height: '100%' }} /> */}
+            <h1>TrafficByDevice</h1>
+          </Grid>
+          <Grid
+            item
+            lg={4}
+            md={6}
+            xl={3}
+            xs={12}
+          >
+            {/* <LatestProducts sx={{ height: '100%' }} /> */}
+            <h1>LatestProducts</h1>
+          </Grid>
+          <Grid
+            item
+            lg={8}
+            md={12}
+            xl={9}
+            xs={12}
+          >
+            {/* <LatestOrders /> */}
+            <h1>LatestOrders</h1>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  </>
+) 
 
-export default Dashboard;
+const DashboardView = () => (
+    <DashboardLayout>
+      <Dashboard />
+    </DashboardLayout>
+  );
+
+export default DashboardView;

@@ -31,6 +31,8 @@ const NavBar = () => {
           alignItems: "center",
           textAlign: "center",
           borderBottom: "1px solid #EBEBED",
+          backgroundColor: 'orangered',
+          justifyContent: "center",
         }}
       >
         <Link to="/">
