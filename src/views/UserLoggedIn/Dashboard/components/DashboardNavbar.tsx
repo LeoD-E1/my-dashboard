@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GroupIcon from '@mui/icons-material/Group';
+import ProfileMenu from 'components/ProfileMenu';
 
 
 const DashboardNavbar = (props: any) => {
@@ -63,16 +64,7 @@ const DashboardNavbar = (props: any) => {
               </Badge>
             </IconButton>
           </Tooltip>
-          <Avatar
-            sx={{
-              height: 40,
-              width: 40,
-              ml: 1
-            }}
-            src="/static/images/avatars/avatar_1.png"
-          >
-            <AccountCircleIcon fontSize="small" />
-          </Avatar>
+          <ProfileMenu />
         </Toolbar>
       </AppBar>
     </>
