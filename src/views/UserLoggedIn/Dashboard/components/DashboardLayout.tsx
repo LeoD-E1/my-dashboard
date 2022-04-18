@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Sidebar from "./Sidebar";
 import { Box} from '@mui/material';
 import { styled } from '@mui/material/styles';
-// import { DashboardNavbar } from './dashboard-navbar';
+import DashboardNavbar from './DashboardNavbar';
 
 const DashboardLayout = (props: any) => {
 
@@ -32,7 +32,7 @@ const DashboardLayout = (props: any) => {
           {children}
         </Box>
       </DashboardLayoutRoot>
-      {/* <DashboardNavbar onSidebarOpen={() => setSidebarOpen(true)} /> */}
+      <DashboardNavbar onSidebarOpen={() => setSidebarOpen(true)} />
       <Sidebar
         onClose={() => setSidebarOpen(false)}
         open={isSidebarOpen}
