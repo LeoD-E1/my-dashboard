@@ -7,7 +7,7 @@ import DashboardNavbar from './DashboardNavbar';
 const DashboardLayout = (props: any) => {
 
   const { children } = props;
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const DashboardLayoutRoot = styled('div')(({ theme }) => ({
     display: 'flex',
