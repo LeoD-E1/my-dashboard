@@ -1,9 +1,8 @@
-import React, {useState} from "react";
-import Sidebar from "./components/Sidebar";
+
 import { Box, Container, Grid } from '@mui/material';
-import { styled } from '@mui/material/styles';
 import DashboardLayout from './components/DashboardLayout';
 // import { DashboardNavbar } from './dashboard-navbar';
+import TotalCustomers from './components/TotalCustomers'
 
 const Dashboard = () => (
   <>
@@ -36,8 +35,7 @@ const Dashboard = () => (
             sm={6}
             xs={12}
           >
-            {/* <TotalCustomers /> */}
-            <h1>TotalCustomers</h1>
+            <TotalCustomers />
           </Grid>
           <Grid
             item
