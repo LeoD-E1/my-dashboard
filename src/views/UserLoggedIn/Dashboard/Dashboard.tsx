@@ -3,6 +3,9 @@ import { Box, Container, Grid } from '@mui/material';
 import DashboardLayout from './components/DashboardLayout';
 // import { DashboardNavbar } from './dashboard-navbar';
 import TotalCustomers from './components/TotalCustomers'
+import BudgetCard from './components/Budget';
+import TasksProgress from './components/TasksProgress';
+import TotalProfitCard from './components/TotalProfitCard';
 
 const Dashboard = () => (
   <>
@@ -25,8 +28,7 @@ const Dashboard = () => (
             xl={3}
             xs={12}
           >
-            {/* <Budget />  */}
-            <h1>Budget</h1>
+            <BudgetCard /> 
           </Grid>
           <Grid
             item
@@ -44,8 +46,7 @@ const Dashboard = () => (
             sm={6}
             xs={12}
           >
-            {/* <TasksProgress /> */}
-            <h1>TasksProgress</h1>
+            <TasksProgress />
           </Grid>
           <Grid
             item
@@ -54,8 +55,7 @@ const Dashboard = () => (
             sm={6}
             xs={12}
           >
-            {/* <TotalProfit sx={{ height: '100%' }} /> */}
-            <h1>TotalProfit</h1>
+            <TotalProfitCard />
           </Grid>
           <Grid
             item

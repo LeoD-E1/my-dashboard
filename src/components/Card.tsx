@@ -1,6 +1,5 @@
 import React from 'react'
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
-// import CircleIcon from '@mui/icons-material/Circle';
 import {ArrowUpward, ArrowDownward, Circle} from '@mui/icons-material';
 import  * as MuiIcons from "@mui/icons-material"
 
@@ -8,7 +7,7 @@ type CardProps = {
   icon?: keyof typeof MuiIcons,
   title: string,
   quantity: { number: number, unit: string },
-  situation: { move: 'up' | 'down', percentage: string, description: string },
+  situation?: { move: 'up' | 'down'| "", percentage: string, description: string },
 }
 
 const CardTemplate = (props: CardProps) => {
@@ -63,7 +62,9 @@ const CardTemplate = (props: CardProps) => {
         }}
       >
         {
-          situation.move === 'up' ? <ArrowUpward color="success" /> : <ArrowDownward color="error" />
+          situation?.move === 'up' 
+          ? <ArrowUpward color="success" /> 
+          : situation?.move === 'down' ? <ArrowDownward color="error" /> : null
         }
         <Typography
           variant="body2"
@@ -71,13 +72,13 @@ const CardTemplate = (props: CardProps) => {
             mr: 1
           }}
         >
-          {situation.percentage}
+          {situation?.percentage}
         </Typography>
         <Typography
           color="textSecondary"
           variant="caption"
         >
-          {situation.description}
+          {situation?.description}
         </Typography>
       </Box>
     </CardContent>
