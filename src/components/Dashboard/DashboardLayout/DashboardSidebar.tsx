@@ -1,6 +1,4 @@
-import React from "react";
 
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import SendIcon from "@mui/icons-material/Send";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -10,9 +8,9 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 import { Box, useMediaQuery, Drawer } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
-import MenuItem from "./MenuItem";
+import MenuItem from "components/MenuItem";
 
-const Sidebar = (props: any) => {
+const DashboardSidebar = (props: any) => {
   const { open, onClose } = props;
   const theme = useTheme();
   const lgUp = useMediaQuery(theme.breakpoints.up('lg') , {
@@ -27,7 +25,7 @@ const Sidebar = (props: any) => {
       title: "Dashboard",
     },
     {
-      href: "/dashboard/",
+      href: "/customers",
       icon: <StarBorder fontSize="small" />,
       title: "Customers",
     },
@@ -45,16 +43,6 @@ const Sidebar = (props: any) => {
       href: "/dashboard/settings",
       icon: <DraftsIcon fontSize="small" />,
       title: "Settings",
-    },
-    {
-      href: "/login",
-      icon: <InboxIcon fontSize="small" />,
-      title: "Login",
-    },
-    {
-      href: "/register",
-      icon: <ExpandMore fontSize="small" />,
-      title: "Register",
     },
     {
       href: "/404",
@@ -124,4 +112,4 @@ const Sidebar = (props: any) => {
   );
 };
 
-export default Sidebar;
+export default DashboardSidebar;

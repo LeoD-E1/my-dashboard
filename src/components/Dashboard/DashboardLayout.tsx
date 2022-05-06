@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import Sidebar from "./Sidebar";
+import DashboardSidebar from "./DashboardLayout/DashboardSidebar";
 import { Box} from '@mui/material';
 import { styled } from '@mui/material/styles';
-import DashboardNavbar from './DashboardNavbar';
+import DashboardNavbar from './DashboardLayout/DashboardNavbar';
 
 const DashboardLayout = (props: any) => {
 
@@ -15,7 +15,8 @@ const DashboardLayout = (props: any) => {
     maxWidth: '100%',
     [theme.breakpoints.up('lg')]: {
       paddingLeft: 280
-    }
+    },
+    paddingTop: "4rem"
   }));
 
   return (
@@ -27,13 +28,14 @@ const DashboardLayout = (props: any) => {
             flex: '1 1 auto',
             flexDirection: 'column',
             width: '100%',
+            py: 8,
           }}
         >
           {children}
         </Box>
       </DashboardLayoutRoot>
       <DashboardNavbar onSidebarOpen={() => setSidebarOpen(true)} />
-      <Sidebar
+      <DashboardSidebar
         onClose={() => setSidebarOpen(false)}
         open={isSidebarOpen}
       />

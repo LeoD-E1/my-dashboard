@@ -1,7 +1,7 @@
 
 import CardTemplate from "components/Card";
 
-const TotalCustomers = () => (
+const TotalCustomersCard = () => (
   <CardTemplate
     icon={"PeopleOutlined"}
     title={"Total Customers"}
@@ -14,4 +14,4 @@ const TotalCustomers = () => (
   />
 );
 
-export default TotalCustomers;
+export default TotalCustomersCard;

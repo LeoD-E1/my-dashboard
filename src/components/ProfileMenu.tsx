@@ -33,7 +33,6 @@ const ProfileMenu = () => {
         id="account-menu"
         open={open}
         onClose={() => setOpen(false)}
-        onClick={handleClick}
         PaperProps={{
           elevation: 0,
           sx: {

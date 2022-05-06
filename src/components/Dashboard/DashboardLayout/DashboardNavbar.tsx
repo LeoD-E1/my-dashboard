@@ -1,12 +1,16 @@
-import styled from '@emotion/styled';
-import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import GroupIcon from '@mui/icons-material/Group';
-import ProfileMenu from 'components/ProfileMenu';
-
+import {
+  AppBar,
+  Badge,
+  Box,
+  IconButton,
+  Toolbar,
+  Tooltip,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import GroupIcon from "@mui/icons-material/Group";
+import ProfileMenu from "components/ProfileMenu";
 
 const DashboardNavbar = (props: any) => {
   const { onSidebarOpen, ...other } = props;
@@ -16,28 +20,30 @@ const DashboardNavbar = (props: any) => {
       <AppBar
         sx={{
           left: {
-            lg: 280
+            lg: 280,
           },
           width: {
-            lg: 'calc(100% - 280px)'
-          }
+            lg: "calc(100% - 280px)",
+          },
+          backgroundColor:"#fff"
         }}
-        {...other}>
+        {...other}
+      >
         <Toolbar
           disableGutters
           sx={{
             minHeight: 64,
             left: 0,
-            px: 2
+            px: 2,
           }}
         >
           <IconButton
             onClick={onSidebarOpen}
             sx={{
               display: {
-                xs: 'inline-flex',
-                lg: 'none'
-              }
+                xs: "inline-flex",
+                lg: "none",
+              },
             }}
           >
             <MenuIcon fontSize="small" />
@@ -55,11 +61,7 @@ const DashboardNavbar = (props: any) => {
           </Tooltip>
           <Tooltip title="Notifications">
             <IconButton sx={{ ml: 1 }}>
-              <Badge
-                badgeContent={4}
-                color="primary"
-                variant="dot"
-              >
+              <Badge badgeContent={4} color="primary" variant="dot">
                 <NotificationsActiveIcon fontSize="small" />
               </Badge>
             </IconButton>
@@ -71,4 +73,4 @@ const DashboardNavbar = (props: any) => {
   );
 };
 
-export default DashboardNavbar
+export default DashboardNavbar;

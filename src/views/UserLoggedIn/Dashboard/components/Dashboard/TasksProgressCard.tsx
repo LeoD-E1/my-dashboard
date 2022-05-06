@@ -1,6 +1,6 @@
 import CardTemplate from "components/Card";
 
-const TasksProgress = () => (
+const TasksProgressCard = () => (
   <CardTemplate
     icon={"InsertChart"}
     title={"Tasks Progress"}
@@ -13,4 +13,4 @@ const TasksProgress = () => (
   />
 );
 
-export default TasksProgress;
+export default TasksProgressCard;
